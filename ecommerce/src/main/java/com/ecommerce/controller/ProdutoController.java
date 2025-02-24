@@ -32,4 +32,9 @@ public class ProdutoController {
         produtoService.deletarProduto(id);
         return ResponseEntity.noContent().build();
     }
+
+    @GetMapping
+    public String Helo() {
+        return "helo word";
+    }
 }

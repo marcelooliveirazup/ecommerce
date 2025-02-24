@@ -2,6 +2,7 @@ package com.ecommerce.controller;
 
 import com.ecommerce.model.Compra;
 import com.ecommerce.service.CompraService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,7 +12,7 @@ import java.util.Map;
 @RestController
 @RequestMapping("/compras")
 public class CompraController {
-
+    @Autowired
     private final CompraService compraService;
 
     public CompraController(CompraService compraService) {
@@ -25,5 +26,11 @@ public class CompraController {
 
         Compra compra = compraService.realizarCompra(cpf, nomesProdutos);
         return ResponseEntity.ok(compra);
+    }
+
+    @GetMapping
+    public String helo() {
+        System.out.println("Heloword");
+        return "Helo word";
     }
 }
