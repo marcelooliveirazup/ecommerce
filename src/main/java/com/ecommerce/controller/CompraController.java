@@ -27,10 +27,6 @@ public class CompraController {
         Compra compra = compraService.realizarCompra(cpf, nomesProdutos);
         return ResponseEntity.ok(compra);
     }
-
-    @GetMapping
-    public String helo() {
-        System.out.println("Heloword");
-        return "Helo word";
-    }
 }
+
+
